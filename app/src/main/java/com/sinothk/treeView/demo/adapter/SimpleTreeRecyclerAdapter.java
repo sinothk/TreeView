@@ -52,9 +52,8 @@ public class SimpleTreeRecyclerAdapter extends TreeRecyclerAdapter {
         }
 
         if (node.getIcon() == -1) {
-            viewHolder.icon.setVisibility(View.INVISIBLE);
-
             viewHolder.cb.setVisibility(View.VISIBLE);
+            viewHolder.icon.setVisibility(View.INVISIBLE);
         } else {
             viewHolder.cb.setVisibility(View.INVISIBLE);
 

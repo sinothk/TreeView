@@ -28,9 +28,9 @@ public class SimpleTreeAdapter extends TreeListViewAdapter {
     }
 
     @Override
-    public View getConvertView(final Node node , int position, View convertView, ViewGroup parent) {
+    public View getConvertView(final Node node, int position, View convertView, ViewGroup parent) {
 
-       final ViewHolder viewHolder ;
+        final ViewHolder viewHolder;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.list_item, parent, false);
             viewHolder = new ViewHolder();
@@ -47,19 +47,21 @@ public class SimpleTreeAdapter extends TreeListViewAdapter {
         viewHolder.cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setChecked(node,viewHolder.cb.isChecked());
+                setChecked(node, viewHolder.cb.isChecked());
             }
         });
 
-        if (node.isChecked()){
+        if (node.isChecked()) {
             viewHolder.cb.setChecked(true);
-        }else {
+        } else {
             viewHolder.cb.setChecked(false);
         }
 
         if (node.getIcon() == -1) {
+            viewHolder.cb.setVisibility(View.VISIBLE);
             viewHolder.icon.setVisibility(View.INVISIBLE);
         } else {
+            viewHolder.cb.setVisibility(View.INVISIBLE);
             viewHolder.icon.setVisibility(View.VISIBLE);
             viewHolder.icon.setImageResource(node.getIcon());
         }
@@ -69,8 +71,7 @@ public class SimpleTreeAdapter extends TreeListViewAdapter {
         return convertView;
     }
 
-    private final class ViewHolder
-    {
+    private final class ViewHolder {
         ImageView icon;
         CheckBox cb;
         TextView label;
