@@ -1,13 +1,12 @@
 package com.sinothk.treeView.demo.view;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.sinothk.treeView.Node;
 import com.sinothk.treeView.TreeListViewAdapter;
@@ -48,7 +47,7 @@ public class ListViewActivity extends AppCompatActivity {
 
         initDatas();
 
-        RecyclerView mRecyTree = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView mRecyTree = findViewById(R.id.recyclerview);
         mRecyTree.setVisibility(View.GONE);
 
 

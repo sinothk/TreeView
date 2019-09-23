@@ -1,14 +1,13 @@
 package com.sinothk.treeView.demo.view;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.sinothk.treeView.Node;
 import com.sinothk.treeView.TreeRecyclerAdapter;
@@ -50,7 +49,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         ListView mListTree = (ListView) findViewById(R.id.lv_tree);
         mListTree.setVisibility(View.GONE);
 
-        RecyclerView mTree = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView mTree = findViewById(R.id.recyclerview);
         mTree.setLayoutManager(new LinearLayoutManager(this));
         //第一个参数  RecyclerView
         //第二个参数  上下文
