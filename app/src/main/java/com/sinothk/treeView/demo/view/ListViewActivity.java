@@ -6,14 +6,13 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sinothk.treeView.Node;
 import com.sinothk.treeView.TreeListViewAdapter;
-import com.sinothk.treeView.demo.FileNode;
 import com.sinothk.treeView.demo.R;
 import com.sinothk.treeView.demo.adapter.SimpleTreeAdapter;
-import com.sinothk.treeView.demo.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +20,34 @@ import java.util.List;
 /**
  * Created by zhangke on 2017-1-15.
  */
-public class ListViewActivity extends BaseActivity {
+public class ListViewActivity extends AppCompatActivity {
     int num = 0;
     private TreeListViewAdapter mAdapter;
+
+    protected List<Node> mDatas = new ArrayList<>();
+
+    private void initDatas() {
+        // id , pid , label , 其他属性
+        mDatas.add(new Node<>("1", "-1", "商务部"));
+
+        mDatas.add(new Node<>(12 + "", 1 + "", "赵某"));
+        mDatas.add(new Node<>(13 + "", 1 + "", "谢总"));
+        mDatas.add(new Node<>(14 + "", 1 + "", "赵偶"));
+
+        mDatas.add(new Node<>("2", "-1", "研发部"));
+
+        mDatas.add(new Node<>(22 + "", 2 + "", "李某"));
+        mDatas.add(new Node<>(23 + "", 2 + "", "张明"));
+        mDatas.add(new Node<>(24 + "", 2 + "", "丸子"));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
+
+        initDatas();
+
         RecyclerView mRecyTree = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyTree.setVisibility(View.GONE);
 
