@@ -210,4 +210,4 @@ TreeView
     }
 
 # 预览
-  <img>[https://github.com/sinothk/TreeView/blob/master/app/img/img01.jpg]
+  ![image](https://github.com/sinothk/TreeView/blob/master/app/img/img01.jpg)
