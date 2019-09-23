@@ -307,9 +307,12 @@ public abstract class TreeRecyclerAdapter extends RecyclerView.Adapter<RecyclerV
      */
     protected void setChecked(final Node node, boolean checked) {
         node.setChecked(checked);
-        setChildChecked(node, checked);
-        if (node.getParent() != null)
-            setNodeParentChecked(node.getParent(), checked);
+
+//        setChildChecked(node, checked);
+//        if (node.getParent() != null)
+//            setNodeParentChecked(node.getParent(), checked);
+
+
         notifyDataSetChanged();
     }
 

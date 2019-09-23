@@ -37,7 +37,6 @@ public class SimpleTreeRecyclerAdapter extends TreeRecyclerAdapter {
     public void onBindViewHolder(final Node node, RecyclerView.ViewHolder holder, int position) {
 
         final MyHoder viewHolder = (MyHoder) holder;
-        //todo do something
         viewHolder.cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

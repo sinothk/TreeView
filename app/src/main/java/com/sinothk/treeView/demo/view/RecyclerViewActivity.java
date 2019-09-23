@@ -42,7 +42,7 @@ public class RecyclerViewActivity extends BaseActivity {
         //第五个参数  展开的图标
         //第六个参数  闭合的图标
         mAdapter = new SimpleTreeRecyclerAdapter(mTree, RecyclerViewActivity.this,
-                mDatas, 1, R.mipmap.tree_ex, R.mipmap.tree_ec);
+                mDatas, 0, R.mipmap.tree_ex, R.mipmap.tree_ec);
 
         mTree.setAdapter(mAdapter);
     }
@@ -76,13 +76,18 @@ public class RecyclerViewActivity extends BaseActivity {
      */
     public void clickShow(View v) {
         StringBuilder sb = new StringBuilder();
+
         final List<Node> allNodes = mAdapter.getAllNodes();
+
         for (int i = 0; i < allNodes.size(); i++) {
+
             if (allNodes.get(i).isChecked()) {
                 sb.append(allNodes.get(i).getName() + ",");
             }
+
         }
         String strNodesName = sb.toString();
+
         if (!TextUtils.isEmpty(strNodesName))
             Toast.makeText(this, strNodesName.substring(0, strNodesName.length() - 1), Toast.LENGTH_SHORT).show();
     }
