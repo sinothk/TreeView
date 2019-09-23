@@ -30,55 +30,52 @@ public class SimpleTreeRecyclerAdapter extends TreeRecyclerAdapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MyHoder(View.inflate(mContext, R.layout.list_item,null));
+        return new MyHolder(View.inflate(mContext, R.layout.list_item, null));
     }
 
     @Override
     public void onBindViewHolder(final Node node, RecyclerView.ViewHolder holder, int position) {
 
-        final MyHoder viewHolder = (MyHoder) holder;
+        final MyHolder viewHolder = (MyHolder) holder;
+
         viewHolder.cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setChecked(node,viewHolder.cb.isChecked());
+                setChecked(node, viewHolder.cb.isChecked());
             }
         });
 
-        if (node.isChecked()){
+        if (node.isChecked()) {
             viewHolder.cb.setChecked(true);
-        }else {
+        } else {
             viewHolder.cb.setChecked(false);
         }
 
         if (node.getIcon() == -1) {
             viewHolder.icon.setVisibility(View.INVISIBLE);
+
+            viewHolder.cb.setVisibility(View.VISIBLE);
         } else {
+            viewHolder.cb.setVisibility(View.INVISIBLE);
+
             viewHolder.icon.setVisibility(View.VISIBLE);
             viewHolder.icon.setImageResource(node.getIcon());
         }
 
         viewHolder.label.setText(node.getName());
-
-
     }
 
-    class MyHoder extends RecyclerView.ViewHolder{
+    class MyHolder extends RecyclerView.ViewHolder {
 
-        public CheckBox cb;
+        CheckBox cb;
+        TextView label;
+        ImageView icon;
 
-        public TextView label;
-
-        public ImageView icon;
-        public MyHoder(View itemView) {
+        MyHolder(View itemView) {
             super(itemView);
-
-            cb = (CheckBox) itemView
-                    .findViewById(R.id.cb_select_tree);
-            label = (TextView) itemView
-                    .findViewById(R.id.id_treenode_label);
-            icon = (ImageView) itemView.findViewById(R.id.icon);
-
+            cb = itemView.findViewById(R.id.cb_select_tree);
+            label = itemView.findViewById(R.id.id_treenode_label);
+            icon = itemView.findViewById(R.id.icon);
         }
-
     }
 }

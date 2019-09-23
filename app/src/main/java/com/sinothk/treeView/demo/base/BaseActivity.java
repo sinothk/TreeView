@@ -13,36 +13,28 @@ import java.util.List;
 /**
  * Created by zhangke on 2017-1-15.
  */
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
-    protected List<Node> mDatas = new ArrayList<Node>();
+    protected List<Node> mDatas = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDatas();
-
     }
 
     private void initDatas() {
         // id , pid , label , 其他属性
-        mDatas.add(new Node("1", "-1", "文件管理系统"));
+        mDatas.add(new Node<>("1", "-1", "商务部"));
 
-        mDatas.add(new Node(2+"", 1+"", "游戏"));
-        mDatas.add(new Node(3+"", 1+"", "文档"));
-        mDatas.add(new Node(4+"", 1+"", "程序"));
-        mDatas.add(new Node(5+"", 2+"", "war3"));
-        mDatas.add(new Node(6+"", 2+"", "刀塔传奇"));
+        mDatas.add(new Node<>(12 + "", 1 + "", "赵某"));
+        mDatas.add(new Node<>(13 + "", 1 + "", "谢总"));
+        mDatas.add(new Node<>(14 + "", 1 + "", "赵偶"));
 
-        mDatas.add(new Node(7 + "", 4 + "", "面向对象"));
-        mDatas.add(new Node(8+"", 4+"", "非面向对象"));
+        mDatas.add(new Node<>("2", "-1", "研发部"));
 
-        mDatas.add(new Node(9+"", 7+"", "C++"));
-        mDatas.add(new Node(10+"", 7+"", "JAVA"));
-        mDatas.add(new Node(11+"", 7+"", "Javascript"));
-        mDatas.add(new Node(12+"", 8+"", "C"));
-        mDatas.add(new Node(13+"", 12+"", "C"));
-        mDatas.add(new Node(14+"", 13+"", "C"));
-        mDatas.add(new Node(15+"", 14+"", "C"));
-        mDatas.add(new Node(16+"", 15+"", "C"));
+        mDatas.add(new Node<>(22 + "", 2 + "", "李某"));
+        mDatas.add(new Node<>(23 + "", 2 + "", "张明"));
+        mDatas.add(new Node<>(24 + "", 2 + "", "丸子"));
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by zhangke on 2017-1-14.
  */
-public class Node<T,B> {
+public class Node<T, B> {
 
     /**
      * 传入的实体对象
@@ -15,13 +15,13 @@ public class Node<T,B> {
     /**
      * 设置开启 关闭的图片
      */
-    public int iconExpand=-1, iconNoExpand = -1;
+    public int iconExpand = -1, iconNoExpand = -1;
 
     private T id;
     /**
      * 根节点pId为0
      */
-    private T pId ;
+    private T pId;
 
     private String name;
 
@@ -34,7 +34,6 @@ public class Node<T,B> {
      * 是否展开
      */
     private boolean isExpand = false;
-
     private int icon = -1;
 
     /**
@@ -63,7 +62,8 @@ public class Node<T,B> {
         this.isChecked = isChecked;
     }
 
-    public Node() {}
+    public Node() {
+    }
 
     public Node(T id, T pId, String name) {
         super();
@@ -71,7 +71,8 @@ public class Node<T,B> {
         this.pId = pId;
         this.name = name;
     }
-    public Node(T id, T pId, String name,B bean) {
+
+    public Node(T id, T pId, String name, B bean) {
         super();
         this.id = id;
         this.pId = pId;
@@ -80,43 +81,35 @@ public class Node<T,B> {
     }
 
 
-    public int getIcon()
-    {
+    public int getIcon() {
         return icon;
     }
 
-    public void setIcon(int icon)
-    {
+    public void setIcon(int icon) {
         this.icon = icon;
     }
 
-    public T getId()
-    {
+    public T getId() {
         return id;
     }
 
-    public void setId(T id)
-    {
+    public void setId(T id) {
         this.id = id;
     }
 
-    public T getpId()
-    {
+    public T getpId() {
         return pId;
     }
 
-    public void setpId(T pId)
-    {
+    public void setpId(T pId) {
         this.pId = pId;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -169,8 +162,7 @@ public class Node<T,B> {
      *
      * @return
      */
-    public boolean isLeaf()
-    {
+    public boolean isLeaf() {
         return children.size() == 0;
     }
 
