@@ -14,7 +14,7 @@ TreeView
 
   ## Step 2. Add the dependency
     dependencies {
-            implementation 'com.github.sinothk:TreeView:1.19.0923'
+            implementation 'com.github.sinothk:TreeView:1.19.0925'
     }
 # 使用
   ## ListView
